@@ -9,7 +9,7 @@ public class Garaj {
 
     public Garaj(int garajBoyutu, List<Arac> garaj){
         this.garajBoyutu = garajBoyutu;
-        this.garaj = garaj;
+        garaj = garaj;
     }
 
     public  List<Arac> getGaraj() { return garaj; }

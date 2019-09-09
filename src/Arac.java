@@ -6,10 +6,8 @@ public class Arac {
 
     private int hacim; /* Aracın kapladığı alan. */
 
-    public Arac(int tip,String isim, int hacim){
+    public Arac(int tip){
         this.tip = tip;
-        this.isim = isim;
-        this.hacim = hacim;
     }
 
     public int getTip(){return tip;}
@@ -24,13 +22,13 @@ public class Arac {
 
     public void setHacim(int newHacim){hacim = newHacim;}
 
-    public Arac getArac(int tip, String isim, int hacim) {
+    /**public Arac getArac(int tip, String isim, int hacim) {
         Arac indexArac = new Arac(tip,isim,hacim);
         return indexArac;
-    }
+    } */
 
     public String toString() {
 
-        return  isim;
+     return  "name";
     }
 }

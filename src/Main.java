@@ -48,7 +48,34 @@ public class Main {
                     int tip = dc.nextInt();
                     if(yenigaraj.getGarajBoyutu() >= aracHacim.get(tip))
                     {
-                        yenigaraj.getGaraj().add(new Arac(tip, aracIsim.get(tip), aracHacim.get(tip)));
+                        switch (tip){
+                            case 1 : {
+                                yenigaraj.getGaraj().add(new Bisiklet(tip, aracIsim.get(tip), aracHacim.get(tip)));
+                                break;
+                            }
+                            case 2 : {
+                                yenigaraj.getGaraj().add(new Motorsiklet(tip, aracIsim.get(tip), aracHacim.get(tip)));
+                                break;
+                            }
+                            case 3 : {
+                                yenigaraj.getGaraj().add(new Araba(tip, aracIsim.get(tip), aracHacim.get(tip)));
+                                break;
+                            }
+                            case 4 : {
+                                yenigaraj.getGaraj().add(new Kamyonet(tip, aracIsim.get(tip), aracHacim.get(tip)));
+                                break;
+                            }
+                            case 5 : {
+                                yenigaraj.getGaraj().add(new Otobus(tip, aracIsim.get(tip), aracHacim.get(tip)));
+                                break;
+                            }
+                            case 6 : {
+                                yenigaraj.getGaraj().add(new Tir(tip, aracIsim.get(tip), aracHacim.get(tip)));
+                                break;
+                            }
+                        }
+
+                       // yenigaraj.getGaraj().add(new Arac(tip, aracIsim.get(tip), aracHacim.get(tip)));
                         yenigaraj.setGarajBoyutu(yenigaraj.getGarajBoyutu() - aracHacim.get(tip));
                         System.out.println("Yeni garaj hacmi " + yenigaraj.getGarajBoyutu());
                     }
@@ -57,10 +84,14 @@ public class Main {
                             System.out.println("Garaj dolu lütfen araç çıkartın ya da daha küçük boyutlu bir araç giriniz.");
                     }
                 } else if (ac.hasNext("LIST")) {
-                    Iterator iterator = yenigaraj.getGaraj().iterator();
+                    /**Iterator iterator = yenigaraj.getGaraj().iterator();
                     while(iterator.hasNext()){
                         System.out.println(iterator.next());
+                    }*/
+                    for (int k = 0; k < yenigaraj.getGaraj().size(); k++){
+                        System.out.println(yenigaraj.getGaraj().get(k));
                     }
+
                 } else if (ac.hasNext("CIK")) {
                     if (n!=yenigaraj.getGarajBoyutu()) {
                         int tip = dc.nextInt();
